@@ -56,7 +56,6 @@ const AppProvider = ({ children }) => {
       return response;
     },
     (error) => {
-      console.log(error.response);
       if (error.response.status === 401) {
         logoutUser();
       }
@@ -215,7 +214,6 @@ const AppProvider = ({ children }) => {
   };
 
   const deleteItem = async (item, id) => {
-    console.log(item);
     dispatch({ type: "DELETE_ITEM_BEGIN" });
     try {
       await authFetch.patch("list/del-item", {

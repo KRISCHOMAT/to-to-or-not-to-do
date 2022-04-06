@@ -1,7 +1,6 @@
 import {
   AiOutlineInfoCircle,
   AiOutlineUnorderedList,
-  AiOutlineCheckCircle,
   AiOutlinePlusCircle,
   AiOutlineHeart,
 } from "react-icons/ai";

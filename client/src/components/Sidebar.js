@@ -7,8 +7,7 @@ import { useAppContext } from "../context/appContext";
 import MenueRow from "./MenueRow";
 
 const Sidebar = () => {
-  const { toggleNav, showNav, isNewRequests, isNewLists, resetSate } =
-    useAppContext();
+  const { toggleNav, showNav, isNewRequests, resetSate } = useAppContext();
   return (
     <Wrapper>
       <Collapse
