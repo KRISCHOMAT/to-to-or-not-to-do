@@ -18,12 +18,10 @@ import {
   updatePassword,
 } from "../controllers/authController.js";
 
-router.route("/register").post(apiLimiter, register);
-router.route("/login").post(apiLimiter, login);
+router.route("/register").post(register);
+router.route("/login").post(login);
 router.route("/update-user").patch(authenticateUser, updateUser);
-router.route("/reset-password/").post(apiLimiter, resetPassword);
-router
-  .route("/update-password/")
-  .post(apiLimiter, authenticateUser, updatePassword);
+router.route("/reset-password/").post(resetPassword);
+router.route("/update-password/").post(authenticateUser, updatePassword);
 
 export default router;
