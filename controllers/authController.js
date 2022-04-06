@@ -91,12 +91,6 @@ export const updateUser = async (req, res) => {
 
   const token = user.createJWT();
 
-  // const newUser = await User.findByIdAndUpdate(
-  //   req.user.userId,
-  //   { name, email: emailLC },
-  //   { new: true }
-  // );
-
   res.status(StatusCodes.CREATED).json({
     user,
     token,

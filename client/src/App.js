@@ -18,7 +18,6 @@ function App() {
           element={
             <ProtectedRoute>
               <SharedLayout />
-              <Route path="/reset-password/:token" element={<Reset />} />
             </ProtectedRoute>
           }
         >
@@ -29,6 +28,7 @@ function App() {
         </Route>
 
         <Route path="/register" element={<Register />} />
+        <Route path="/reset-password/:token" element={<Reset />} />
       </Routes>
     </BrowserRouter>
   );
