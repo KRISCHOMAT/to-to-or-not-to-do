@@ -19,9 +19,7 @@ const contactEmail = nodemailer.createTransport({
 
 contactEmail.verify((error) => {
   if (error) {
-    console.log(error);
   } else {
-    console.log("ready to send");
   }
 });
 
@@ -107,7 +105,6 @@ export const updateUser = async (req, res) => {
 
 export const resetPassword = async (req, res) => {
   const { email } = req.body;
-  console.log(req.body);
   const user = await User.findOne({ email: email });
 
   if (!user) {
@@ -121,7 +118,7 @@ export const resetPassword = async (req, res) => {
     to: email,
     subject: `reset password`,
     html: `<p>Follow this link to reset your password</p>
-            <a href='http://localhost:3000/reset-password/${token}'>reset</a>`,
+            <a href='https://tranquil-crag-63984.herokuapp.com/reset-password/${token}'>reset</a>`,
   };
 
   await contactEmail.sendMail(mailToClient);

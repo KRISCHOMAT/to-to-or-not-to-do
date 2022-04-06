@@ -22,10 +22,8 @@ export const delList = async (req, res) => {
 
 export const delItem = async (req, res) => {
   const { id, item } = req.body;
-  console.log(item);
   const list = await List.findById(id);
   const { items } = list;
-  console.log(items);
   const newItems = items.filter((oldItem) => {
     return oldItem._id != item._id;
   });
@@ -66,7 +64,6 @@ export const updateList = async (req, res) => {
 };
 
 export const addUser = async (req, res) => {
-  console.log(req.body.email);
   const user = await User.findOne(req.body);
   if (!user) {
     throw new BadRequestError("could not find user");
